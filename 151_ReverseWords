@@ -1,0 +1,18 @@
+class Solution {
+    public String reverseWords(String s) {
+        String[] k=s.trim().split(" +");
+        String f="";
+        for(int j=k.length-1;j>=0;j--)
+        {
+            if(j!=0)
+            {
+            f+=k[j]+" ";
+            }
+            else
+            {
+                f+=k[j];
+            }
+        }
+        return f;
+    }
+}

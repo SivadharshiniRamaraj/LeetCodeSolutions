@@ -1,0 +1,31 @@
+class Solution {
+    public int[] twoSum(int[] numbers, int target) {
+        int n=numbers.length;
+        ArrayList<Integer> l=new ArrayList<>();
+        int k=0;
+        boolean f=false;
+        for(int i=0;i<n;i++)
+        {
+            for(int j=i+1;j<n;j++)
+            {
+                if(numbers[i]+numbers[j]==target)
+                {
+                 l.add(i+1);
+                 l.add(j+1);
+                 f=true;
+                 break;
+                }
+            }
+                if(f)
+                {
+                    break;
+                }
+            }
+                 int arr[]=new int[l.size()];
+                 for(k=0;k<l.size();k++)
+                 {
+                    arr[k]=l.get(k);
+                 }
+                 return arr;
+    }
+}

@@ -1,0 +1,39 @@
+class Solution {
+    static String h="";
+    static boolean rev(String s,int n)
+    {
+        String m=s;
+        if(n<0)
+        {
+           if(h.equals(m))
+           {
+            return true;
+           }
+           else
+           {
+            return false;
+           }
+        }
+        h+=s.charAt(n);
+        return rev(s,n-1);
+    }
+    String j="";
+    public String firstPalindrome(String[] words) {
+        int i=0;
+        while(i<words.length)
+        {
+            h="";
+            if(rev(words[i],words[i].length()-1))
+            {
+                j=words[i];
+                break;
+            }
+            else
+            {
+                j="";
+            }
+            i++;
+        }
+        return j;
+    }
+}
