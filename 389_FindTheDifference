@@ -1,0 +1,24 @@
+class Solution {
+    public char findTheDifference(String s, String t) {
+        HashMap<Character,Integer> tm=new HashMap<>();
+        for(int i=0;i<t.length();i++)
+        {
+            tm.put(t.charAt(i),tm.getOrDefault(t.charAt(i),0)+1);
+        }
+        HashMap<Character,Integer> sm=new HashMap<>();
+        for(int i=0;i<s.length();i++)
+        {
+            sm.put(s.charAt(i),sm.getOrDefault(s.charAt(i),0)+1);
+        }
+        Set<Character> a=tm.keySet();
+        Set<Character> b=sm.keySet();
+        for(char x:a)
+        {
+            if(!b.contains(x) || tm.get(x)>sm.get(x))
+            {
+             return x;
+            }
+        }
+        return ' ';
+    }
+}
